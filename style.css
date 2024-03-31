@@ -1,0 +1,208 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Geologica:wght@100..900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Geologica", sans-serif;
+}
+body {
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.button {
+  background-color: rgba(255, 255, 255, 1); /* Green */
+  border: none;
+  color: black;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+}
+
+.button2 {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.button2:hover {
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+  
+}
+
+input[placeholder="Найти на Wildblocks"] {
+  width: 800px;
+  box-sizing: border-box;
+  border: 0px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+  background-color: white;
+  background-position: 10px 10px; 
+  background-repeat: no-repeat;
+  padding: 12px 20px 12px 40px;
+  position: relative;
+  top: 18px; left: 0px;
+  height: 60px;
+}
+
+header {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100px;
+}
+
+/* Add a black background color to the top navigation */
+.topnav {
+  background-image: linear-gradient(to right, #e139c1 , #781bed);
+  overflow: hidden;
+  
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+  float: right;
+  color: #c58ff6;
+  text-align: center;
+  padding: 55px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+  background-color: #a73afd;
+  color: white;
+}
+
+/* Add a color to the active/current link */
+.topnav a.active {
+  background-color: rgba(250, 143, 198, 0.8);
+  color: white;
+}
+.topnav a:hover[href="index.html"] {
+  background-color: rgba(250, 143, 198, 0.0);
+}
+.topnav a[href="index.html"] {
+  float: left;
+  color: #f2f2f2;
+  padding: 28px 16px;
+  text-decoration: none;
+  font-size: 35px;
+  margin-left: 200px; margin-right: 100px;
+}
+
+/* Add a color to the active/current link */
+.topnav a.active[href="index.html"] {
+  background-color: rgba(250, 143, 198, 0.8);
+  color: white;
+}
+
+.wrapper {
+  width: 500px;
+  height: 500px;
+  background: white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border: 1px solid #ddd;
+  border-radius: 25px;
+  justify-content: center;
+  align-items: center;
+  padding: 30px 40px;
+}
+.wrapper h1 {
+  text-align: center;
+}
+
+input[id="nickname"] {
+  
+  width: 100%;
+  border: 0px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+  background-color: #ededf3; 
+  background-repeat: no-repeat;
+  position: relative;
+  height: 40px;
+  padding: 30px 40px;
+  margin: 10px 0;
+}
+input[id="password"] {
+  
+  width: 100%;
+  border: 0px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+  background-color: #ededf3; 
+  background-repeat: no-repeat;
+  position: relative;
+  height: 40px;
+  padding: 30px 40px;
+  margin: 10px 0;
+}
+input[id="name"] {
+  
+  width: 100%;
+  border: 0px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+  background-color: #ededf3; 
+  background-repeat: no-repeat;
+  position: relative;
+  height: 40px;
+  padding: 30px 40px;
+  margin: 10px 0;
+}
+.wrapper .btn {
+  width: 100%;
+  height: 60px;
+  border-radius: 8px;
+  font-size: 16px;
+  background: #a73afd;
+  border: none;
+  color: white;
+}
+.wrapper .btn:hover {
+  background: #b253fd;
+}
+
+input[name="nickname"]:hover  {
+  background: #e8e8f0;
+}
+input[name="password"]:hover  {
+  background: #e8e8f0;
+}
+
+.wrapper .register-link {
+  font-size: 14.5px;
+  text-align: center;
+  margin-top: 20px;
+}
+.wrapper .remember-forgot {
+  font-size: 14.5px;
+  display: flex;
+  justify-content: space-between;
+  margin: 15px 0 15px;
+}
+.register-link p a {
+  text-decoration: none;
+  font-weight: 600;
+}
+.remember-forgot label input {
+  accent-color: #fff;
+  margin-right: 3px;
+}
