@@ -1,85 +1,66 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Geologica:wght@100..900&display=swap');
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+body {
+	margin: 0;
+	padding: 0;
+	font-size: 18px;
+  background: black;
+
   font-family: "Geologica", sans-serif;
 }
-body {
-  background: linear-gradient(0deg, rgba(33,15,28,1) 0%, rgba(0,0,0,1) 100%);
-  display: flex;
-  justify-content: left;
-  align-items: center;
-  min-height: 100vh;
+.porno {
+  max-width: 390px;
 }
-body[name="adres"] {
-  background-color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: left;
-  min-height: 100vh;
+.test {
+  border: 2px solid #392f33;
+  border-radius: 25px;
+  background-color: #58494f;
+	text-align: center;
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: 200px 200px 200px;
+  margin: 0;
+  padding: 0;
 }
-
+.usercard {
+  color: white;
+	text-align: center;
+}
 .myButton{
   background:url(./but.png) no-repeat;
   cursor:pointer;
   border:none;
   width:296px;
-  height:296px;
+  height:350px;
 }
 
 .myButton:active  /* use Dot here */
 {   
   background:url(./but2.png) no-repeat;
 }
-
-
-header {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background-color: #333;
-  position: fixed;
-  top: 0;
-  width: 100%;
-  height: 100px;
-  z-index: 999999;
-  max-width: 390px;
-}
-
-/* Add a black background color to the top navigation */
 .topnav {
-  background-color: black;
-  overflow: hidden;
-  
+  background-color: #392f33;
+	text-align: center;
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: 200px 200px 200px;
+  border: 2px solid #392f33;
+  border-radius: 15px;
+  width: 85%;
+  height: 40px;
+  margin-left: auto;
+  margin-right: auto
 }
-
-/* Style the links inside the navigation bar */
 .topnav a {
-  float: left;
-  color: white;
-  text-align: center;
-  padding: 55px 8px;
+  color: #c1a2ae;
+  padding: 0px 8px;
   text-decoration: none;
-  font-size: 13px;
+  font-size: 10px;
 }
-
-/* Add a color to the active/current link */
 .topnav a.active {
-  background-color: rgba(250, 143, 198, 0.8);
+  background-color: black;
   color: white;
 }
-
-
 .test h3 {
-  text-align: center;
-  padding: 55px 0px;
+  padding: 25px 0px;
   color:white;
-}
-.div[class="test"] {
-  text-align: left;
 }
