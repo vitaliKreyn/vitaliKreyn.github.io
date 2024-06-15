@@ -29,7 +29,6 @@ document.addEventListener('DOMContentLoaded', () => {
             if (energy < 0) energy = 0;
             updateEnergyText();
         } else {
-            alert("Out of energy! Wait for it to replenish.");
         }
     });
 
@@ -42,7 +41,6 @@ document.addEventListener('DOMContentLoaded', () => {
             clickValueDisplay.textContent = clickValue;
             upgradeCostDisplay.textContent = upgradeCost;
         } else {
-            alert("Not enough clicks to upgrade!");
         }
     });
 
@@ -56,7 +54,6 @@ document.addEventListener('DOMContentLoaded', () => {
             boosterLevelDisplay.textContent = boosterLevel;
             boosterCostDisplay.textContent = boosterCost;
         } else {
-            alert("Not enough clicks to buy booster!");
         }
     });
 
