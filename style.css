@@ -1,66 +1,31 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Geologica:wght@100..900&display=swap');
 
 body {
 	margin: 0;
 	padding: 0;
 	font-size: 18px;
-  background: black;
+  background: #58494f;
 
   font-family: "Geologica", sans-serif;
 }
-.porno {
+
+.container {
   max-width: 390px;
-}
-.test {
-  border: 2px solid #392f33;
-  border-radius: 25px;
-  background-color: #58494f;
-	text-align: center;
-	grid-template-columns: 1fr 1fr;
-	grid-template-rows: 200px 200px 200px;
-  margin: 0;
-  padding: 0;
-}
-.usercard {
-  color: white;
-	text-align: center;
-}
-.myButton{
-  background:url(./but.png) no-repeat;
-  cursor:pointer;
-  border:none;
-  width:296px;
-  height:350px;
+
+  text-align: center;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.myButton:active  /* use Dot here */
-{   
-  background:url(./but2.png) no-repeat;
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  margin: 5px;
 }
-.topnav {
-  background-color: #392f33;
-	text-align: center;
-	grid-template-columns: 1fr 1fr;
-	grid-template-rows: 200px 200px 200px;
-  border: 2px solid #392f33;
-  border-radius: 15px;
-  width: 85%;
-  height: 40px;
-  margin-left: auto;
-  margin-right: auto
-}
-.topnav a {
-  color: #c1a2ae;
-  padding: 0px 8px;
-  text-decoration: none;
-  font-size: 10px;
-}
-.topnav a.active {
-  background-color: black;
-  color: white;
-}
-.test h3 {
-  padding: 25px 0px;
-  color:white;
+
+button:hover {
+  background-color: #d3d3d3;
 }
