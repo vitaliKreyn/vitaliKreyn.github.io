@@ -1,9 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Geologica:wght@100..900&display=swap');
 
 body {
-  margin: 0;
-  padding: 0;
-  font-size: 18px;
+	margin: 0;
+	padding: 0;
+	font-size: 18px;
   background: var(--tg-theme-bg-color);
   color: var(--tg-theme-text-color);
   font-family: "Geologica", sans-serif;
@@ -13,10 +13,8 @@ body {
   max-width: 390px;
 
   text-align: center;
-  background: white;
   padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
 }
 
 button {
