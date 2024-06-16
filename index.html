@@ -5,20 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Srintuscoin Game</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+
 </head>
 <body>
     <div class="container">
         <h1>Srintuscoin Game</h1>
-        <p>Clicks: <span id="clickCount">0</span></p>
-        <button id="clickerButton">Click Me!</button>
+        <p>🐷: <span id="clickCount">0</span></p>
+        <button class="srintus" id="clickerButton">Click Me!</button>
         <h2>Energy</h2>
-        <p>Energy: <span id="energyText">100</span> / 100</p>
-        <h2>Upgrades</h2>
-        <button id="upgradeButton">Upgrade Clicks (Cost: <span id="upgradeCost">100</span>)</button>
+        <p>Energy: <span id="energyText">100</span> / <span id="maxEnergyText">100</span></p>
+        <button id="openUpgradesButton">Open Upgrades</button>
+    </div>
+    <div class="container" id="upgradesContainer" style="display: none;">
+        <h1>Upgrades</h1>
+        <button id="upgradeButton">DAMAGE (Cost: <span id="upgradeCost">100</span>)</button>
         <p>Click Value: <span id="clickValue">1</span></p>
-        <button id="boosterButton">Buy Booster (Cost: <span id="boosterCost">50</span>)</button>
+        <button id="maxEnergyButton">ENERGY CAP (Cost: <span id="maxEnergyCost">30</span>)</button>
+        <p>Max Energy Level: <span id="maxEnergyLevel">1</span></p>
+        <button id="boosterButton">RECHARGING SPEED (Cost: <span id="boosterCost">50</span>)</button>
         <p>Booster Level: <span id="boosterLevel">1</span></p>
+        <button id="backToGameButton">Back to Game</button>
     </div>
     <script src="script.js"></script>
+    
 </body>
 </html>
