@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const upgradeButton = document.getElementById('upgradeButton');
     const upgradeCostDisplay = document.getElementById('upgradeCost');
     const clickValueDisplay = document.getElementById('clickValue');
+    const energyBar = document.getElementById('energyBar');
     const energyText = document.getElementById('energyText');
     const maxEnergyText = document.getElementById('maxEnergyText');
     const maxEnergyButton = document.getElementById('maxEnergyButton');
@@ -12,6 +13,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const boosterButton = document.getElementById('boosterButton');
     const boosterCostDisplay = document.getElementById('boosterCost');
     const boosterLevelDisplay = document.getElementById('boosterLevel');
+    const openUpgradesButton = document.getElementById('openUpgradesButton');
+    const backToGameButton = document.getElementById('backToGameButton');
+    const gameContainer = document.getElementById('gameContainer');
+    const upgradesContainer = document.getElementById('upgradesContainer');
+
 
     let clickCount = 0;
     let clickValue = 1;
@@ -23,8 +29,12 @@ document.addEventListener('DOMContentLoaded', () => {
     let boosterLevel = 1;
     let boosterCost = 50;
     let energyReplenishRate = 1; // Points per second
+    const maxBoosterLevel = 3;
 
-    function updateEnergyText() {
+
+function updateEnergyDisplay() {
+        const energyPercentage = (energy / maxEnergy) * 100;
+        energyBar.style.width = `${energyPercentage}%`;
         energyText.textContent = energy;
         maxEnergyText.textContent = maxEnergy;
     }
@@ -35,7 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
             clickCountDisplay.textContent = clickCount;
             energy -= clickValue; // Decrease energy by 1 per click
             if (energy < 0) energy = 0;
-            updateEnergyText();
+            updateEnergyDisplay();
         } else {
         }
     });
@@ -61,40 +71,45 @@ document.addEventListener('DOMContentLoaded', () => {
             clickCountDisplay.textContent = clickCount;
             maxEnergyLevelDisplay.textContent = maxEnergyLevel;
             maxEnergyCostDisplay.textContent = maxEnergyCost;
-            updateEnergyText();
+            updateEnergyDisplay();
         } else {
         }
     });
 
     boosterButton.addEventListener('click', () => {
-        if (clickCount >= boosterCost) {
-            clickCount -= boosterCost;
-            boosterLevel++;
-            energyReplenishRate *= 2;
-            boosterCost = Math.floor(boosterCost * 2);
-            clickCountDisplay.textContent = clickCount;
-            boosterLevelDisplay.textContent = boosterLevel;
-            boosterCostDisplay.textContent = boosterCost;
+        if (boosterLevel < maxBoosterLevel) {
+            if (clickCount >= boosterCost) {
+                clickCount -= boosterCost;
+                boosterLevel++;
+                energyReplenishRate *= 2;
+                boosterCost = Math.floor(boosterCost * 2);
+                clickCountDisplay.textContent = clickCount;
+                boosterLevelDisplay.textContent = boosterLevel;
+                boosterCostDisplay.textContent = boosterCost;
+                if (boosterLevel === maxBoosterLevel) {
+                    boosterButton.disabled = true;
+                }
+            } else {
+            }
         } else {
         }
     });
-
 
     setInterval(() => {
         if (energy < maxEnergy) {
             energy += energyReplenishRate;
             if (energy > maxEnergy) energy = maxEnergy;
-            updateEnergyText();
+            updateEnergyDisplay();
         }
     }, 1000);
 
     openUpgradesButton.addEventListener('click', () => {
-        document.querySelector('.container').style.display = 'none';
+        gameContainer.style.display = 'none';
         upgradesContainer.style.display = 'block';
     });
 
     backToGameButton.addEventListener('click', () => {
         upgradesContainer.style.display = 'none';
-        document.querySelector('.container').style.display = 'block';
+        gameContainer.style.display = 'block';
     });
 });
