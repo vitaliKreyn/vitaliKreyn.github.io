@@ -36,3 +36,17 @@ button {
   border: none;
   padding: 10px 20px;
 }
+.progress-bar {
+  width: 100%;
+  background: rgb(159,159,159, 15);
+  border-radius: 10px;
+  overflow: hidden;
+  margin: 10px 0;
+}
+
+.progress-bar-fill {
+  height: 30px;
+  width: 100%;
+  background: linear-gradient(90deg, rgba(88,29,71,1) 0%, rgba(255,147,235,1) 100%);
+  transition: width 0.3s;
+}
