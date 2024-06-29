@@ -4,7 +4,7 @@ body {
 	margin: 0;
 	padding: 0;
 	font-size: 18px;
-  background: #22111d;
+  background: #19050c;
   font-family: "Geologica", sans-serif;
   color: white;
 }
@@ -22,7 +22,7 @@ button {
   margin: 5px;
   border-radius: 10px;
   border: none;
-  background: #341924;
+  background: #2b0915;
   color: white;
 }
 
@@ -38,7 +38,7 @@ button {
 }
 .progress-bar {
   width: 100%;
-  background: rgb(159,159,159, 15);
+  background: #260813;
   border-radius: 10px;
   overflow: hidden;
   margin: 10px 0;
@@ -47,6 +47,33 @@ button {
 .progress-bar-fill {
   height: 30px;
   width: 100%;
-  background: linear-gradient(90deg, rgba(88,29,71,1) 0%, rgba(255,147,235,1) 100%);
+  background: linear-gradient(90deg, #480e22 0%, #d76e8c 100%);
   transition: width 0.3s;
+}
+
+.clicker-container {
+  position: relative;
+  display: inline-block;
+}
+
+.background-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 400px;
+  height: 400px;
+  z-index: 1;
+}
+
+.image-button {
+  background: none;
+  border: none;
+  padding: 0;
+  z-index: 2;
+  position: relative;
+}
+
+.image-button img {
+  width: 400px;
+  height: 400px;
 }
