@@ -15,9 +15,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const boosterLevelDisplay = document.getElementById('boosterLevel');
     const openUpgradesButton = document.getElementById('openUpgradesButton');
     const backToGameButton = document.getElementById('backToGameButton');
+    const openTasksButton = document.getElementById('openTasksButton');
+    const backToGameFromTasksButton = document.getElementById('backToGameFromTasksButton');
     const gameContainer = document.getElementById('gameContainer');
     const upgradesContainer = document.getElementById('upgradesContainer');
-
+    const tasksContainer = document.getElementById('tasksContainer');
 
     let clickCount = 0;
     let clickValue = 1;
@@ -31,8 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let energyReplenishRate = 1; // Points per second
     const maxBoosterLevel = 3;
 
-
-function updateEnergyDisplay() {
+    function updateEnergyDisplay() {
         const energyPercentage = (energy / maxEnergy) * 100;
         energyBar.style.width = `${energyPercentage}%`;
         energyText.textContent = energy;
@@ -46,6 +47,22 @@ function updateEnergyDisplay() {
             energy -= clickValue; // Decrease energy by 1 per click
             if (energy < 0) energy = 0;
             updateEnergyDisplay();
+                    // Tilt effect
+        const buttonRect = clickerButton.getBoundingClientRect();
+        const offsetX = event.clientX - buttonRect.left;
+        const offsetY = event.clientY - buttonRect.top;
+        const centerX = buttonRect.width / 2;
+        const centerY = buttonRect.height / 2;
+        const rotateX = (centerY - offsetY) / 10;
+        const rotateY = (offsetX - centerX) / 10;
+
+        clickerButton.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+        clickerButton.classList.add('tilt');
+
+        // Remove tilt effect after some time
+        setTimeout(() => {
+            clickerButton.style.transform = 'rotateX(0deg) rotateY(0deg)';
+        }, 300);
         } else {
         }
     });
@@ -54,7 +71,7 @@ function updateEnergyDisplay() {
         if (clickCount >= upgradeCost) {
             clickCount -= upgradeCost;
             clickValue++;
-            upgradeCost = Math.floor(upgradeCost * 2);
+            upgradeCost = Math.floor(upgradeCost * 1.5);
             clickCountDisplay.textContent = clickCount;
             clickValueDisplay.textContent = clickValue;
             upgradeCostDisplay.textContent = upgradeCost;
@@ -66,8 +83,8 @@ function updateEnergyDisplay() {
         if (clickCount >= maxEnergyCost) {
             clickCount -= maxEnergyCost;
             maxEnergyLevel++;
-            maxEnergy += 100; // Increase maximum energy by 20
-            maxEnergyCost = Math.floor(maxEnergyCost * 2);
+            maxEnergy += 20; // Increase maximum energy by 20
+            maxEnergyCost = Math.floor(maxEnergyCost * 1.5);
             clickCountDisplay.textContent = clickCount;
             maxEnergyLevelDisplay.textContent = maxEnergyLevel;
             maxEnergyCostDisplay.textContent = maxEnergyCost;
@@ -81,7 +98,7 @@ function updateEnergyDisplay() {
             if (clickCount >= boosterCost) {
                 clickCount -= boosterCost;
                 boosterLevel++;
-                energyReplenishRate *= 2;
+                energyReplenishRate *= 1.5;
                 boosterCost = Math.floor(boosterCost * 2);
                 clickCountDisplay.textContent = clickCount;
                 boosterLevelDisplay.textContent = boosterLevel;
@@ -110,6 +127,16 @@ function updateEnergyDisplay() {
 
     backToGameButton.addEventListener('click', () => {
         upgradesContainer.style.display = 'none';
+        gameContainer.style.display = 'block';
+    });
+
+    openTasksButton.addEventListener('click', () => {
+        gameContainer.style.display = 'none';
+        tasksContainer.style.display = 'block';
+    });
+
+    backToGameFromTasksButton.addEventListener('click', () => {
+        tasksContainer.style.display = 'none';
         gameContainer.style.display = 'block';
     });
 });
