@@ -7,6 +7,7 @@ body {
   background: #19050c;
   font-family: "Geologica", sans-serif;
   color: white;
+  user-select: none
 }
 
 .container {
@@ -24,17 +25,21 @@ button {
   border: none;
   background: #2b0915;
   color: white;
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+  -webkit-tap-highlight-color: transparent;
 }
 
 .srintus {
   background: rgba(117, 190, 218, 0);
   border: none;
   padding: 10px 20px;
+  user-select: none
 }
 .srintus:hover {
   background: rgba(117, 190, 218, 0);
   border: none;
   padding: 10px 20px;
+  user-select: none
 }
 .progress-bar {
   width: 100%;
@@ -42,6 +47,7 @@ button {
   border-radius: 10px;
   overflow: hidden;
   margin: 10px 0;
+  user-select: none
 }
 
 .progress-bar-fill {
@@ -49,11 +55,13 @@ button {
   width: 100%;
   background: linear-gradient(90deg, #480e22 0%, #d76e8c 100%);
   transition: width 0.3s;
+  user-select: none
 }
 
 .clicker-container {
   position: relative;
   display: inline-block;
+  user-select: none
 }
 
 .background-image {
@@ -63,6 +71,7 @@ button {
   width: 400px;
   height: 400px;
   z-index: 1;
+  user-select: none
 }
 
 .image-button {
@@ -71,6 +80,7 @@ button {
   padding: 0;
   z-index: 2;
   position: relative;
+  user-select: none
 }
 
 .image-button img {
