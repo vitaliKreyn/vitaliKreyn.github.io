@@ -1,34 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Srintuscoin Game</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
 
+
 </head>
 <body>
     <div class="container" id="gameContainer">
         <h1>Srintuscoin Game</h1>
         <p>🐷 <span id="clickCount">0</span></p>
-        <button class="srintus" id="clickerButton"><img src="but.png"></img> </button>
-        <h2>Energy</h2>
+        <div class="clicker-container">
+            <img src="butbac.png" alt="Background Image" class="background-image">
+            <button id="clickerButton" class="image-button">
+                <img src="buttex.png" alt="Click Me!">
+            </button>
+        </div>        <h2>Energy</h2>
         <div class="progress-bar">
             <div id="energyBar" class="progress-bar-fill"></div>
         </div>
         <p>⚡️⚡️ <span id="energyText">100</span> / <span id="maxEnergyText">100</span></p>
-        <button id="openUpgradesButton">Open Upgrades</button>
+        <button id="openUpgradesButton"><i class="fa fa-angle-double-up"></i> Upgrades</button>
+        <button id="openTasksButton"><i class="fa fa-tasks"></i> Tasks</button>
+        <button id="openPigButton" onclick="window.location.href='pig.html'">Open Pig</button>
     </div>
     <div class="container" id="upgradesContainer" style="display: none;">
         <h1>Upgrades</h1>
-        <button id="upgradeButton">Upgrade Clicks (Cost: <span id="upgradeCost">10</span>)</button>
+        <button id="upgradeButton">Upgrade Clicks (Cost: <span id="upgradeCost">100</span>)</button>
         <p>Click Value: <span id="clickValue">1</span></p>
-        <button id="maxEnergyButton">Increase Max Energy (Cost: <span id="maxEnergyCost">30</span>)</button>
+        <button id="maxEnergyButton">Max Energy (Cost: <span id="maxEnergyCost">30</span>)</button>
         <p>Max Energy Level: <span id="maxEnergyLevel">1</span></p>
-        <button id="boosterButton">Buy Booster (Cost: <span id="boosterCost">50</span>)</button>
+        <button id="boosterButton">Energy Cap (Cost: <span id="boosterCost">50</span>)</button>
         <p>Booster Level: <span id="boosterLevel">1</span></p>
         <button id="backToGameButton">Back to Game</button>
+    </div>
+    <div class="container" id="tasksContainer" style="display: none;">
+        <h1>Tasks</h1>
+        <p>This is a task window.</p>
+        <button id="backToGameFromTasksButton">Back</button>
     </div>
     <script src="script.js"></script>
     
